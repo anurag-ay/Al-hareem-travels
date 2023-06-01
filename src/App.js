@@ -1,4 +1,4 @@
-import Navbar from "./Components/navbar";
+import NavBar from "./Components/navbar";
 import Footer from "./Components/footer";
 import Home from "./Components/home";
 import About from "./Components/about";
@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        <Navbar />
+        <NavBar />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<About />} />
