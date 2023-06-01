@@ -7,7 +7,8 @@ function Header() {
     <AppBar>
         <Toolbar>
         <img src="" alt="logo" />
-        <Typography>Al Hareem Travels</Typography>
+        <Typography>Al Hareem</Typography>
+        
         </Toolbar>
     </AppBar>
 </React.Fragment>
