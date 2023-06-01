@@ -1,14 +1,14 @@
 import React from "react";
 import './navbar.css';
-import Logo  from '../images/Al_hareem_logo1.jpg'
+// import Logo  from '../images/Al_hareem_logo1.jpg'
 import { Link } from 'react-router-dom';
 
-function navbar() {
+function Navbar() {
   return (
       <div 
     className="navbar">
       <Link className="link" to="/">
-        <img className="logo" src={Logo} alt="" />
+        {/* <img className="logo" src={Logo} alt="" /> */}
       </Link>
         
           <div className="project_name">
@@ -39,4 +39,4 @@ function navbar() {
   );
 }
 
-export default navbar;
+export default Navbar;

@@ -1,5 +1,12 @@
+import Navbar from './Components/navbar'
+import Footer from './Components/footer'
+import Home from './Components/home'
+import About from './Components/about'
+import Contact from './Components/contact'
+import Services from './Components/service'
 
 
+import { BrowserRouter,Routes,Route} from 'react-router-dom';
 
 function App() {
   return (
@@ -15,7 +22,7 @@ function App() {
       </Routes>
       
     </div>
-   
+   <Footer />
     </BrowserRouter>
     </>
   );
