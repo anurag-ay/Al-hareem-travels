@@ -14,7 +14,7 @@ import CarRental__image from "../Assets/Images/Services/CarRentals.webp";
 
 function service() {
   return (
-    <Box id="services" sx={{ alignItems: "center" }}>
+    <Box sx={{ alignItems: "center" }}>
       <Typography
         variant="h4"
         component="h1"
