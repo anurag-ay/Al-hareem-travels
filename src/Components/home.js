@@ -1,10 +1,13 @@
 import React from 'react'
-
+import Carousel from './carousel'
+import { Box } from '@mui/material'
 function home() {
   return (
-    <div>
-      home
-    </div>
+    <Box>
+       <Carousel />
+    </Box>
+     
+    
   )
 }
 
