@@ -1,14 +1,16 @@
-import React from 'react'
-import Carousel from './carousel'
-import { Box } from '@mui/material'
+import React from "react";
+import Carousel from "./carousel";
+import { Box } from "@mui/material";
+import Services from "../Components/service";
 function home() {
   return (
-    <Box>
-       <Carousel />
-    </Box>
-     
-    
-  )
+    <>
+      <Box>
+        <Carousel />
+      </Box>
+      <Services />
+    </>
+  );
 }
 
-export default home
+export default home;
