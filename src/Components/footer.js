@@ -6,13 +6,14 @@ import FacebookIcon from '@mui/icons-material/Facebook';
 import TwitterIcon from '@mui/icons-material/Twitter';
 function Footer() {
   return (
-    <Stack direction="column" spacing={5} sx={{justifyContent:"center" , backgroundColor:"gray", padding:"40px", color:"white"}}>
+    <Stack direction="column" spacing={5} sx={{justifyContent:"center" , backgroundColor:"black", padding:"40px", color:"white"}}>
 <Stack direction={{ xs: "column", sm: "row" }} spacing={10} sx={{justifyContent:"center" }}>
-  <Box width={{xs:"10em",sm:"15em"}} sx={{p:"1em"}}>
+  <Box width={{xs:"10em",sm:"25em"}} sx={{p:"1em"}}>
           <Typography variant='h5' align='center'>Contact Us</Typography>
           <Stack direction="column" spacing={2} sx={{justifyContent:"center",marginTop:"20px"}}>
-          <Typography variant='body1'>Contact No. : 9305274045  | 6393171082 </Typography>
-          <Typography variant='body1'>Email : mohdshahwaz4045@gmail.com</Typography>
+          <Typography variant='body1'>Contact No. : +918090117598 or +919305807600 </Typography>
+          <Typography variant='body1'>Landline No. : +915224237878 </Typography>
+          <Typography variant='body1'>Email : alhareemlko@gmail.com</Typography>
           </Stack>
   </Box>  
   <Box width={{xs:"100vw",sm:"25vw"}}sx={{p:"1em"}}>
@@ -40,7 +41,7 @@ function Footer() {
     </Box>
 </Stack>
   <Divider color="white"/>
-<Stack direction="row" spacing={2} sx={{justifyContent:"center" , backgroundColor:"gray", color:"white"}}>
+<Stack direction="row" spacing={2} sx={{justifyContent:"center" , backgroundColor:"black", color:"white"}}>
 
 <Typography variant='body1'>All rights reserved @2023</Typography>
 </Stack>
@@ -48,5 +49,4 @@ function Footer() {
       
   )
 }
-
 export default Footer
