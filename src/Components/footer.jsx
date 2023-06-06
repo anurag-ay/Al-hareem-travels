@@ -2,6 +2,7 @@ import {
   Email,
   Facebook,
   Instagram,
+  LocationOn,
   Phone,
   PhoneAndroid,
   Twitter,
@@ -31,18 +32,33 @@ function Footer() {
       >
         {/* Address */}
         <Box maxWidth={{ lg: "30em" }}>
-          <Typography variant="h3" fontSize="1.2em" fontWeight="bold">
+          <Typography
+            p="0 0 0 0.5em"
+            variant="h3"
+            fontSize="1.2em"
+            fontWeight="bold"
+          >
             AL HAREEM TRAVELS
           </Typography>
-          <Typography mt="1em" color="rgb(144, 152, 161)">
-            OFFICE NO 3,BE-SIDE PROXELA SALOON, FIRST FLOOR KB PLAZA 43/78,
-            NAVAL KISHORE ROAD, HAZRATGANJ, LUCKNOW 226001, UP
-          </Typography>
+          <Box
+            sx={{ display: "flex", alignItems: "center" }}
+            color="rgb(144, 152, 161)"
+          >
+            <Typography mt="1em" color="rgb(144, 152, 161)" p="0 0 0 0.5em">
+              OFFICE NO 3,BE-SIDE PROXELA SALOON, FIRST FLOOR KB PLAZA 43/78,
+              NAVAL KISHORE ROAD, HAZRATGANJ, LUCKNOW 226001, UP
+            </Typography>
+          </Box>
         </Box>
 
         {/* Contact Info */}
         <Box>
-          <Typography fontSize="1.2em" fontWeight="bold" variant="h3">
+          <Typography
+            fontSize="1.2em"
+            fontWeight="bold"
+            variant="h3"
+            p="0 0 0 0.5em"
+          >
             Contact
           </Typography>
           <Stack mt="1em" color="rgb(144, 152, 161)">
@@ -80,7 +96,12 @@ function Footer() {
 
         {/* Social Media Handles */}
         <Box>
-          <Typography fontSize="1.2em" fontWeight="bold" variant="h3">
+          <Typography
+            fontSize="1.2em"
+            fontWeight="bold"
+            variant="h3"
+            p="0 0 0 0.5em"
+          >
             Join our Social
           </Typography>
           <Stack
@@ -88,10 +109,17 @@ function Footer() {
             direction="row"
             justifyContent="flex-start"
             spacing={3}
+            color="rgb(144, 152, 161)"
           >
-            <Facebook />
-            <Instagram />
-            <Twitter />
+            <IconButton color="inherit">
+              <Facebook />
+            </IconButton>
+            <IconButton color="inherit">
+              <Instagram />
+            </IconButton>
+            <IconButton color="inherit">
+              <Twitter />
+            </IconButton>
           </Stack>
         </Box>
       </Stack>
