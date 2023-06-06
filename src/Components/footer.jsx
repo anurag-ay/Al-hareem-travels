@@ -1,89 +1,89 @@
-import { Typography, Box, Divider } from "@mui/material";
-import Stack from "@mui/material/Stack";
+import {
+  Email,
+  Facebook,
+  Instagram,
+  Phone,
+  PhoneAndroid,
+  Twitter,
+} from "@mui/icons-material";
+import { Box, Divider, IconButton, Stack, Typography } from "@mui/material";
 import React from "react";
-import InstagramIcon from "@mui/icons-material/Instagram";
-import FacebookIcon from "@mui/icons-material/Facebook";
-import TwitterIcon from "@mui/icons-material/Twitter";
+
 function Footer() {
   return (
     <Stack
-      direction="column"
-      spacing={5}
-      sx={{
-        justifyContent: "center",
-        backgroundColor: "#42a1ff",
-        color: "white",
-      }}
+      spacing={2}
+      p="1.2em 1.2em 0 1.2em"
+      sx={{ backgroundColor: "hsl(214, 18%, 18%)", color: "white" }}
     >
       <Stack
-        direction={{ xs: "column", sm: "row" }}
-        spacing={10}
-        sx={{ justifyContent: "center" }}
+        spacing={3}
+        direction={{ xs: "column", sm: "column", lg: "row" }}
+        sx={{}}
+        justifyContent={{ lg: "space-between" }}
       >
-        <Box width={{ xs: "10em", sm: "15em" }} sx={{ p: "1em" }}>
-          <Typography variant="h5" align="center">
-            Contact Us
+        {/* Address */}
+        <Box maxWidth={{ lg: "30em" }}>
+          <Typography variant="h3" fontSize="1.2em" fontWeight="bold">
+            AL HAREEM TRAVELS
           </Typography>
-          <Stack
-            direction="column"
-            spacing={2}
-            sx={{ justifyContent: "center", marginTop: "20px" }}
-          >
-            <Typography variant="body1">
-              Contact No. : 9305274045 | 6393171082{" "}
-            </Typography>
-            <Typography variant="body1">
-              Email : mohdshahwaz4045@gmail.com
-            </Typography>
+          <Typography mt="1em" color="rgb(144, 152, 161)">
+            OFFICE NO 3,BE-SIDE PROXELA SALOON, FIRST FLOOR KB PLAZA 43/78,
+            NAVAL KISHORE ROAD, HAZRATGANJ, LUCKNOW 226001, UP
+          </Typography>
+        </Box>
+
+        {/* Contact Info */}
+        <Box>
+          <Typography fontSize="1.2em" fontWeight="bold" variant="h3">
+            Contact
+          </Typography>
+          <Stack mt="1em" color="rgb(144, 152, 161)">
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <IconButton color="inherit">
+                <PhoneAndroid />
+              </IconButton>
+
+              <Typography>+91-8090117598 / +91-9305807600</Typography>
+            </Box>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <IconButton color="inherit">
+                <Phone />
+              </IconButton>
+              <Typography>+91-522-4237878</Typography>
+            </Box>
+
+            <Box sx={{ display: "flex", alignItems: "center" }}>
+              <IconButton color="inherit">
+                <Email />
+              </IconButton>
+              <Typography>alhareemlko@gmail.com</Typography>
+            </Box>
           </Stack>
         </Box>
-        <Box width={{ xs: "100vw", sm: "25vw" }} sx={{ p: "1em" }}>
-          <Typography variant="h5" align="center">
-            Our Services
+
+        {/* Social Media Handles */}
+        <Box>
+          <Typography fontSize="1.2em" fontWeight="bold" variant="h3">
+            Join our Social
           </Typography>
           <Stack
-            direction="column"
-            spacing={2}
-            sx={{ justifyContent: "center", marginTop: "20px" }}
+            mt="1em"
+            direction="row"
+            justifyContent="flex-start"
+            spacing={3}
           >
-            <Typography variant="body1">
-              At Travel Company, we offer a range of services to make your
-              travels easier and more enjoyable.
-            </Typography>
-          </Stack>
-        </Box>
-        <Box width={{ xs: "100vw", sm: "25vw" }} sx={{ p: "1em" }}>
-          <Typography variant="h5" align="center">
-            Developer
-          </Typography>
-          <Stack
-            direction="column"
-            spacing={2}
-            sx={{ justifyContent: "center", marginTop: "20px" }}
-          >
-            <Typography variant="body1">
-              This website is developed by MIGZ developers. If you want to
-              developthis types of website You can contact me
-            </Typography>
-            <Typography variant="body1">
-              Contact No. : 9305274045 or 6393171082{" "}
-            </Typography>
-            <Typography variant="body1">
-              Email : mohdshahwaz4045@gmail.com
-            </Typography>
-          </Stack>
-        </Box>
-        <Box width={{ xs: "100vw", sm: "25vw" }} sx={{ p: "1em" }}>
-          <Typography variant="h5" align="center">
-            Follow Us
-          </Typography>
-          <Stack direction="row" spacing={2} sx={{ marginTop: "20px" }}>
-            <InstagramIcon />
-            <FacebookIcon />
-            <TwitterIcon />
+            <Facebook />
+            <Instagram />
+            <Twitter />
           </Stack>
         </Box>
       </Stack>
+
+      <Divider sx={{ borderColor: "gray" }} />
+      <Box p="0 0 0.5em 0">
+        <Typography align="center">Copyright</Typography>{" "}
+      </Box>
     </Stack>
   );
 }
