@@ -6,7 +6,14 @@ import {
   PhoneAndroid,
   Twitter,
 } from "@mui/icons-material";
-import { Box, Divider, IconButton, Stack, Typography } from "@mui/material";
+import {
+  Box,
+  Divider,
+  IconButton,
+  Link,
+  Stack,
+  Typography,
+} from "@mui/material";
 import React from "react";
 
 function Footer() {
@@ -52,12 +59,21 @@ function Footer() {
               </IconButton>
               <Typography>+91-522-4237878</Typography>
             </Box>
-
-            <Box sx={{ display: "flex", alignItems: "center" }}>
-              <IconButton color="inherit">
-                <Email />
-              </IconButton>
-              <Typography>alhareemlko@gmail.com</Typography>
+            <Box>
+              <Link
+                sx={{
+                  display: "flex",
+                  textDecoration: "none",
+                  color: "inherit",
+                  alignItems: "center",
+                }}
+                href="mailto:alhareemlko@gmail.com"
+              >
+                <IconButton color="inherit">
+                  <Email href="mailto:alhareemlko@gmail.com" />
+                </IconButton>
+                <Typography>alhareemlko@gmail.com</Typography>
+              </Link>
             </Box>
           </Stack>
         </Box>
