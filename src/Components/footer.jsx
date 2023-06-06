@@ -2,7 +2,6 @@ import {
   Email,
   Facebook,
   Instagram,
-  LocationOn,
   Phone,
   PhoneAndroid,
   Twitter,
@@ -126,7 +125,7 @@ function Footer() {
 
       <Divider sx={{ borderColor: "gray" }} />
       <Box p="0 0 0.5em 0">
-        <Typography align="center">Copyright</Typography>{" "}
+        <Typography align="center">All Rights are reserved@2023</Typography>{" "}
       </Box>
     </Stack>
   );

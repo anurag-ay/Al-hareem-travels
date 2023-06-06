@@ -5,10 +5,12 @@ import Contact from "./Components/contact";
 import Services from "./Components/service";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./Components/footer";
 
 function App() {
   return (
     <>
+    
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -17,7 +19,9 @@ function App() {
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/services" element={<Services />} />
         </Routes>
+ <Footer/>
       </BrowserRouter>
+     
     </>
   );
 }
