@@ -1,5 +1,4 @@
 import NavBar from "./Components/navbar";
-import Footer from "./Components/footer";
 import Home from "./Components/home";
 import About from "./Components/about";
 import Contact from "./Components/contact";
@@ -18,7 +17,6 @@ function App() {
           <Route exact path="/contact" element={<Contact />} />
           <Route exact path="/services" element={<Services />} />
         </Routes>
-        <Footer />
       </BrowserRouter>
     </>
   );
