@@ -14,7 +14,7 @@ import flight__image from "../Assets/Images/Services/Flight.jpg";
 
 function service() {
   return (
-    <Box sx={{ alignItems: "center" }}>
+    <Box id="services" sx={{ alignItems: "center" }}>
       <Box>
         <Typography
           variant="h4"
