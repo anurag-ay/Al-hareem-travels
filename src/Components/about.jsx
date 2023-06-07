@@ -1,7 +1,11 @@
+<<<<<<< HEAD
 import Card from '@mui/material/Card';
 
 import CardMedia from '@mui/material/CardMedia';
 
+=======
+import { Card, CardMedia, Container, Stack, Typography } from "@mui/material";
+>>>>>>> 8c4b3869f72bed7f0507da43b945fdb6b8f739b6
 import React from "react";
 import { Box,  Typography } from "@mui/material";
 
