@@ -99,13 +99,14 @@ function NavBar() {
                 </MenuItem>
               </Link>
 
-              <Link className="link" to="/about">
+              <a className="link" href="#about">
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center" color="black">
+
                     About
                   </Typography>
                 </MenuItem>
-              </Link>
+              </a>
 
               <a className="link" href="#services">
                 <MenuItem onClick={handleCloseNavMenu}>
@@ -159,9 +160,9 @@ function NavBar() {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              <Link className="link" to="/about">
+               <a href="#about" className="link">
                 About
-              </Link>
+              </a>
             </Button>
             <Button
               onClick={handleCloseNavMenu}

@@ -1,66 +1,39 @@
-import {
-  Box,
-  Card,
-  CardMedia,
-  Container,
-  Stack,
-  Typography,
-} from "@mui/material";
+import Card from '@mui/material/Card';
+
+import CardMedia from '@mui/material/CardMedia';
+
 import React from "react";
-import travel__image from "../Components/Travel.jpeg";
+import { Box,  Typography } from "@mui/material";
+
+
 
 function about() {
   return (
-    <Container>
-      <Typography variant="h3" align="center">
-        About Us
-      </Typography>
-      <Typography variant="body1" align="center">
-        Lorem ipsum dolor sit amet consectetur.
-      </Typography>
-      <Stack direction={{ xs: "column", sm: "row" }}>
-        <Typography variant="body1">
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Eaque sequi
-          possimus doloremque hic harum cumque nulla animi eius tempora quia,
-          libero fugit ratione distinctio nihil itaque at dolore!
+   <Box id="about">
+              <Typography
+          variant="h4"
+          component="h1"
+          textAlign="center"
+          
+          sx={{ mt: "1em" ,mb:"1em"}}
+        >
+          About Us
         </Typography>
+    <Card  sx={{ maxWidth: "100vw" }}>
+        <CardMedia 
+          component="img"
+          height="440"
+          image="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
+          alt="green iguana"
+        />
+    </Card>
+    <Box marginLeft="20em" marginRight="20em" justifyContent="center">
+      <Typography variant='body1'p="2em">Images may be two or three-dimensional, such as a photograph or screen display, or three-dimensional, such as a statue or hologram. They may be captured by optical devices – such as cameras, mirrors, lenses, telescopes, microscopes, and natural objects and phenomena, such as the human eye or water.
 
-        <Card sx={{ maxWidth: 400 }}>
-          <CardMedia
-            component="img"
-            height="194"
-            image={travel__image}
-            alt="Travel Image"
-          />
-        </Card>
-      </Stack>
-      <Stack spacing={2}>
-        <Card sx={{ maxWidth: 345 }}>
-          <CardMedia
-            component="img"
-            height="194"
-            image={travel__image}
-            alt="Travel Image"
-          />
-        </Card>
-        <Card sx={{ maxWidth: 345 }}>
-          <CardMedia
-            component="img"
-            height="194"
-            image={travel__image}
-            alt="Travel Image"
-          />
-        </Card>
-        <Card sx={{ maxWidth: 345 }}>
-          <CardMedia
-            component="img"
-            height="194"
-            image={travel__image}
-            alt="Travel Image"
-          />
-        </Card>
-      </Stack>
-    </Container>
+The word 'image' is also used in the broader sense of any two-dimensional figure such as a map, graph, pie chart, painting , or banner. In this wider sense, images can also be rendered manually, such as by drawing, the art of painting, carving, rendered automatically by printing or computer graphics technology, or developed by a combination of methods.</Typography>
+    </Box>
+    
+   </Box>
   );
 }
 
