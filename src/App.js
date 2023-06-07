@@ -4,10 +4,12 @@ import About from "./Components/about";
 import Contact from "./Components/contact";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Footer from "./Components/footer";
 
 function App() {
   return (
     <>
+    
       <BrowserRouter>
         <NavBar />
         <Routes>
@@ -15,7 +17,9 @@ function App() {
           <Route exact path="/about" element={<About />} />
           <Route exact path="/contact" element={<Contact />} />
         </Routes>
+ <Footer/>
       </BrowserRouter>
+     
     </>
   );
 }
