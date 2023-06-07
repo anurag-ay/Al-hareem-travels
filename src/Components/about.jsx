@@ -1,11 +1,4 @@
-import {
-  Box,
-  Card,
-  CardMedia,
-  Container,
-  Stack,
-  Typography,
-} from "@mui/material";
+import { Card, CardMedia, Container, Stack, Typography } from "@mui/material";
 import React from "react";
 import travel__image from "../Components/Travel.jpeg";
 
