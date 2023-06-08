@@ -1,4 +1,5 @@
 import { Card, CardMedia, Box, Typography } from "@mui/material";
+import { Container } from "@mui/system";
 import React from "react";
 
 function about() {
@@ -20,8 +21,8 @@ function about() {
           alt="green iguana"
         />
       </Card>
-      <Box marginLeft="20em" marginRight="20em" justifyContent="center">
-        <Typography variant="body1" p="2em">
+      <Container maxWidth="md">
+        <Typography variant="body1" p="2em 0 2em 0" align="justify">
           Images may be two or three-dimensional, such as a photograph or screen
           display, or three-dimensional, such as a statue or hologram. They may
           be captured by optical devices – such as cameras, mirrors, lenses,
@@ -33,7 +34,7 @@ function about() {
           automatically by printing or computer graphics technology, or
           developed by a combination of methods.
         </Typography>
-      </Box>
+      </Container>
     </Box>
   );
 }

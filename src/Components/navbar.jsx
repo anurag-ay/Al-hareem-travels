@@ -37,7 +37,7 @@ function NavBar() {
   };
 
   return (
-    <AppBar position="static" >
+    <AppBar position="sticky">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           {/* Logo Name */}
@@ -102,7 +102,6 @@ function NavBar() {
               <a className="link" href="#about">
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center" color="black">
-
                     About
                   </Typography>
                 </MenuItem>
@@ -160,7 +159,7 @@ function NavBar() {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-               <a href="#about" className="link">
+              <a href="#about" className="link">
                 About
               </a>
             </Button>
