@@ -3,7 +3,7 @@ import React from 'react'
 
 function contact() {
   return (
-     <Box id="contact">
+     <Box id="contact" sx={{backgroundColor:"lightgray",padding:"2rem"}}>
         <Typography
         variant="h4"
         component="h1"
@@ -12,7 +12,7 @@ function contact() {
       >
        Contact Us
       </Typography>
-      <Card style={{maxWidth:"40rem" , margin:"2rem auto", padding:"10rem 5 rem"}}>
+      <Card style={{maxWidth:"40rem" , margin:"0 auto", padding:"10rem 5rem"}}>
         <CardContent>
           <form >
            <Grid container spacing={2}>
