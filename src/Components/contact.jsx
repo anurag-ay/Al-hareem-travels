@@ -1,12 +1,4 @@
-import {
-  Box,
-  Button,
-  Card,
-  CardContent,
-  Grid,
-  TextField,
-  Typography,
-} from "@mui/material";
+import { Box, Button, Grid, TextField, Typography } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 
@@ -16,7 +8,7 @@ function contact() {
     justifyContent: "center",
   });
   return (
-    <Box id="contact" sx={{ backgroundColor: "lightgray", padding: "2rem" }}>
+    <Box id="contact" sx={{ backgroundColor: "e5e5e5" }}>
       <Typography
         variant="h4"
         component="h1"
@@ -26,8 +18,8 @@ function contact() {
         Contact Us
       </Typography>
       <Form>
-        <Grid container spacing={2} m="0" sx={{ maxWidth: "40em" }}>
-          <Grid item xs={12}>
+        <Grid container m="0" sx={{ maxWidth: "40em" }}>
+          <Grid p="1em 0 1em 0" item xs={12}>
             <TextField
               label="First Name"
               placeholder="Enter Your first name"
@@ -36,7 +28,7 @@ function contact() {
               required
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid p="1em 0 1em 0" item xs={12}>
             <TextField
               label="Last Name"
               placeholder="Enter Your last name"
@@ -45,7 +37,7 @@ function contact() {
               required
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid p="1em 0 1em 0" item xs={12}>
             <TextField
               type="email"
               label="Email"
@@ -55,7 +47,7 @@ function contact() {
               required
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid p="1em 0 1em 0" item xs={12}>
             <TextField
               type="number"
               label="Phone"
@@ -65,7 +57,7 @@ function contact() {
               required
             />
           </Grid>
-          <Grid item xs={12}>
+          <Grid p="1em 0 1em 0" item xs={12}>
             <TextField
               label="Message"
               multiline
@@ -77,7 +69,7 @@ function contact() {
             />
           </Grid>
         </Grid>
-        <Box p="1em" sx={{ display: "flex", justifyContent: "center" }}>
+        <Box p="0 0 1em 0" sx={{ display: "flex", justifyContent: "center" }}>
           <Button type="submit" variant="contained" color="primary">
             Submit
           </Button>
