@@ -3,6 +3,7 @@ import Carousel from "./carousel";
 import { Box } from "@mui/material";
 import Services from "../Components/services";
 import About from "./about";
+import Contact from "./contact";
 function home() {
   return (
     <>
@@ -12,6 +13,7 @@ function home() {
 
       <Services />
       <About />
+      <Contact/>
     </>
   );
 }
