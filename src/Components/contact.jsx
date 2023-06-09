@@ -16,7 +16,7 @@ function contact() {
     justifyContent: "center",
   });
   return (
-    <Box id="contact">
+    <Box id="contact" sx={{ backgroundColor: "lightgray", padding: "2rem" }}>
       <Typography
         variant="h4"
         component="h1"
