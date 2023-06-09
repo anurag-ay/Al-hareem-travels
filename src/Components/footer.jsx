@@ -66,13 +66,38 @@ function Footer() {
                 <PhoneAndroid />
               </IconButton>
 
-              <Typography>+91-8090117598 / +91-9305807600</Typography>
+              <Link
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  fontSize: "1em",
+                }}
+                href="tel:+91-8090117598"
+              >
+                +91-8090117598
+              </Link>
+              <Link
+                marginLeft="0.5em"
+                sx={{
+                  textDecoration: "none",
+                  color: "inherit",
+                  fontSize: "1em",
+                }}
+                href="tel:+91-9305807600"
+              >
+                +91-9305807600
+              </Link>
             </Box>
             <Box sx={{ display: "flex", alignItems: "center" }}>
               <IconButton color="inherit">
                 <Phone />
               </IconButton>
-              <Typography>+91-522-4237878</Typography>
+              <Link
+                sx={{ textDecoration: "none", color: "inherit" }}
+                href="tel:+91-522-4237878"
+              >
+                +91-522-4237878
+              </Link>
             </Box>
             <Box>
               <Link
