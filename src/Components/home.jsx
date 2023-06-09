@@ -1,7 +1,7 @@
 import React from "react";
 import Carousel from "./carousel";
 import { Box } from "@mui/material";
-import Services from "../Components/service";
+import Services from "../Components/services";
 import About from "./about";
 function home() {
   return (

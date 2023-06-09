@@ -1,9 +1,9 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 import Item from "./carousel-item";
-import slider from "../slider.json";
+import slider from "../Assets/Data/carousal_data.json";
 
-function Example() {
+function CarouselCopmonent() {
   return (
     <Carousel autoPlay indicators={false}>
       {slider.map((item) => (
@@ -13,4 +13,4 @@ function Example() {
   );
 }
 
-export default Example;
+export default CarouselCopmonent;
