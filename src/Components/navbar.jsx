@@ -115,13 +115,13 @@ function NavBar() {
                 </MenuItem>
               </a>
 
-              <Link className="link" to="/contact">
+              <a className="link" href="#contact">
                 <MenuItem onClick={handleCloseNavMenu}>
                   <Typography textAlign="center" color="black">
                     Contact Us
                   </Typography>
                 </MenuItem>
-              </Link>
+              </a>
             </Menu>
           </Box>
 
@@ -175,9 +175,9 @@ function NavBar() {
               onClick={handleCloseNavMenu}
               sx={{ my: 2, color: "white", display: "block" }}
             >
-              <Link className="link" to="/contact">
+              <a href="#contact" className="link">
                 Contact US
-              </Link>
+              </a>
             </Button>
           </Box>
 
