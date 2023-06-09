@@ -26,10 +26,10 @@ function contact() {
                 <TextField type='email' label="Email" placeholder='Enter Your Email' variant='outlined' fullWidth required/>
             </Grid>
             <Grid item xs={12}>
-                <TextField type='number' label="Phone" placeholder='Enter Your Email' variant='outlined' fullWidth required/>
+                <TextField type='number' label="Phone" placeholder='Enter Your phone number' variant='outlined' fullWidth required/>
             </Grid>
               <Grid item xs={12}>
-                <TextField label="Message" multiline rows={4}  placeholder='Type your message here' variant='outlined' fullWidth required/>
+                <TextField label="Message" multiline rows={4}  placeholder='Enter your message here' variant='outlined' fullWidth required/>
             </Grid>
             <Grid item xs={12}>
                   <Button type='submit' variant='contained' color='primary' sx={{justifyContent:"center"}}>Submit</Button>
