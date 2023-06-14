@@ -8,12 +8,10 @@ function home() {
   return (
     <>
       <Carousel />
-      <Divider/>
       <Services />
-      <Divider/>
       <About />
-      <Divider/>
-      <Contact/>
+      <Divider />
+      <Contact />
     </>
   );
 }

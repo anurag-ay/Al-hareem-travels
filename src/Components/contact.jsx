@@ -1,12 +1,50 @@
-import { Box, Button, Grid, TextField, Typography } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import {
+  Alert,
+  Box,
+  Button,
+  Collapse,
+  Grid,
+  Snackbar,
+  TextField,
+  Typography,
+} from "@mui/material";
 import styled from "styled-components";
+import { MuiTelInput, matchIsValidTel } from "mui-tel-input";
 
-function contact() {
-  const Form = styled("form")({
-    display: "grid",
-    justifyContent: "center",
-  });
+const Form = styled("form")({
+  display: "grid",
+  justifyContent: "center",
+});
+
+function Contact() {
+  const [firstName, setFirstName] = useState("");
+  const [lastName, setlastName] = useState("");
+  const [email, setemail] = useState("");
+  const [phoneNo, setphoneNo] = useState("");
+  const [message, setmessage] = useState("");
+  const [isValidPhoneNo, setisValidPhoneNO] = useState(true);
+
+  const [open, setOpen] = useState(false);
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      return;
+    }
+
+    setOpen(false);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log(e);
+    alert("Form submited");
+    setFirstName("");
+    setlastName("");
+    setemail("");
+    setphoneNo("");
+    setmessage("");
+  };
   return (
     <Box id="contact" sx={{ backgroundColor: "e5e5e5" }}>
       <Typography
@@ -17,7 +55,7 @@ function contact() {
       >
         Contact Us
       </Typography>
-      <Form>
+      <Form onSubmit={handleSubmit}>
         <Grid container m="0" sx={{ maxWidth: "40em" }}>
           <Grid p="1em 0 1em 0" item xs={12}>
             <TextField
@@ -25,7 +63,10 @@ function contact() {
               placeholder="Enter Your first name"
               variant="outlined"
               fullWidth
-              required
+              // required
+              onChange={(e) => {
+                setFirstName(e.target.value);
+              }}
             />
           </Grid>
           <Grid p="1em 0 1em 0" item xs={12}>
@@ -34,7 +75,10 @@ function contact() {
               placeholder="Enter Your last name"
               variant="outlined"
               fullWidth
-              required
+              // required
+              onChange={(e) => {
+                setlastName(e.target.value);
+              }}
             />
           </Grid>
           <Grid p="1em 0 1em 0" item xs={12}>
@@ -44,28 +88,43 @@ function contact() {
               placeholder="Enter Your Email"
               variant="outlined"
               fullWidth
-              required
+              onChange={(e) => {
+                setemail(e.target.value);
+              }}
+              // required
             />
           </Grid>
-          <Grid p="1em 0 1em 0" item xs={12}>
-            <TextField
-              type="number"
+          <Grid p="1em 0 0 0" item xs={12}>
+            <MuiTelInput
+              value={phoneNo}
               label="Phone"
-              placeholder="Enter Your Email"
-              variant="outlined"
+              defaultCountry="IN"
               fullWidth
-              required
+              variant="outlined"
+              sx={{ color: "#666674" }}
+              onChange={(newPhone) => {
+                setphoneNo(newPhone);
+                setisValidPhoneNO(matchIsValidTel(newPhone));
+              }}
             />
           </Grid>
-          <Grid p="1em 0 1em 0" item xs={12}>
+          {isValidPhoneNo ? null : (
+            <Grid p="0 0 1em 0" item xs={12}>
+              <Alert severity="error">Invalid Phone No.</Alert>
+            </Grid>
+          )}
+          <Grid p="2em 0 1em 0" item xs={12}>
             <TextField
               label="Message"
               multiline
               rows={4}
               placeholder="Type your message here"
               variant="outlined"
+              onChange={(e) => {
+                setmessage(e.target.value);
+              }}
               fullWidth
-              required
+              // required
             />
           </Grid>
         </Grid>
@@ -75,8 +134,13 @@ function contact() {
           </Button>
         </Box>
       </Form>
+      <Snackbar open={open} autoHideDuration={3000} onClose={handleClose}>
+        <Alert onClose={handleClose} severity="success" sx={{ width: "100%" }}>
+          This is a success message!
+        </Alert>
+      </Snackbar>
     </Box>
   );
 }
 
-export default contact;
+export default Contact;
