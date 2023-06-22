@@ -47,6 +47,7 @@ export default function SignIn() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     const formData = {
       email,
       password,
@@ -69,7 +70,8 @@ export default function SignIn() {
       setPassword("");
       window.location.reload();
     } catch (err) {
-      setResMessage(err.response.data);
+      if (err?.response) setResMessage(err?.response?.data);
+      else setResMessage(err?.message);
       setResSucess(false);
       setBackDropOpen(false);
       setOpenSnackbar(true);
@@ -171,7 +173,6 @@ export default function SignIn() {
                 }
                 label="Password"
                 value={password}
-                margin="normal"
                 required
                 fullWidth
                 autoComplete="current-password"
@@ -181,11 +182,13 @@ export default function SignIn() {
                 }}
               />
             </FormControl>
+
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
             <Button
+              disabled={!email || !password}
               type="submit"
               fullWidth
               variant="contained"
