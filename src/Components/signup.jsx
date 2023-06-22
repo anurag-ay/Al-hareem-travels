@@ -19,10 +19,16 @@ import {
   Snackbar,
   FormControlLabel,
   Checkbox,
+  InputLabel,
+  OutlinedInput,
+  InputAdornment,
+  IconButton,
+  FormControl,
 } from "@mui/material";
 import { MuiTelInput, matchIsValidTel } from "mui-tel-input";
 
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const defaultTheme = createTheme();
 
@@ -33,9 +39,11 @@ export default function SignUp() {
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassoword] = useState("");
+  const [confirmPassword, setConfirmPassoword] = useState("");
   const [phone, setphone] = useState("");
   const [isValidPhoneNo, setisValidPhoneNO] = useState(true);
 
+  const [showPassword, setShowPassword] = useState(false);
   const [backDropOpen, setBackDropOpen] = useState(false);
   const [openSnackbar, setOpenSnackbar] = useState(false);
   const [resMessage, setResMessage] = useState("");
@@ -85,6 +93,13 @@ export default function SignUp() {
     setOpenSnackbar(false);
   };
 
+  const handleClickShowPassword = () => {
+    setShowPassword((show) => !show);
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
   return (
     <ThemeProvider theme={defaultTheme}>
       <Backdrop
@@ -113,8 +128,8 @@ export default function SignUp() {
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 6,
-            marginBottom: 6,
+            marginTop: 2,
+            marginBottom: 2,
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
@@ -196,20 +211,71 @@ export default function SignUp() {
                 />
               </Grid>
               <Grid item xs={12}>
-                <TextField
-                  required
-                  fullWidth
-                  value={password}
-                  name="password"
-                  label="Password"
-                  type="password"
-                  id="password"
-                  autoComplete="new-password"
-                  onChange={(e) => {
-                    setPassoword(e.target.value);
-                  }}
-                />
+                <FormControl fullWidth variant="outlined">
+                  <InputLabel>Password *</InputLabel>
+                  <OutlinedInput
+                    type={showPassword ? "text" : "password"}
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                          edge="end"
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                    required
+                    fullWidth
+                    value={password}
+                    name="password"
+                    label="Password"
+                    id="password"
+                    autoComplete="new-password"
+                    onChange={(e) => {
+                      setPassoword(e.target.value);
+                    }}
+                  />
+                </FormControl>
               </Grid>
+              <Grid item xs={12}>
+                <FormControl fullWidth variant="outlined">
+                  <InputLabel>Confirm Password *</InputLabel>
+                  <OutlinedInput
+                    type={showPassword ? "text" : "password"}
+                    endAdornment={
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={handleClickShowPassword}
+                          onMouseDown={handleMouseDownPassword}
+                          edge="end"
+                        >
+                          {showPassword ? <VisibilityOff /> : <Visibility />}
+                        </IconButton>
+                      </InputAdornment>
+                    }
+                    required
+                    fullWidth
+                    value={confirmPassword}
+                    name="confirm password"
+                    label="Confirm Password"
+                    id="confirm password"
+                    autoComplete="new-password"
+                    onChange={(e) => {
+                      setConfirmPassoword(e.target.value);
+                    }}
+                  />
+                </FormControl>
+              </Grid>
+
+              {confirmPassword ? (
+                password === confirmPassword ? null : (
+                  <Grid p="0 0 1em 0" item xs={12}>
+                    <Alert severity="error">Password Should Match</Alert>
+                  </Grid>
+                )
+              ) : null}
               <Grid item xs={12}>
                 <FormControlLabel
                   control={
