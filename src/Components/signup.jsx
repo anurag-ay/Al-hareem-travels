@@ -78,7 +78,8 @@ export default function SignUp() {
       setphone("");
       navigate("/signin");
     } catch (err) {
-      setResMessage(err?.response?.data);
+      if (err?.response) setResMessage(err?.response?.data);
+      else setResMessage(err?.message);
       setResSucess(false);
       setBackDropOpen(false);
       setOpenSnackbar(true);
@@ -286,6 +287,15 @@ export default function SignUp() {
               </Grid>
             </Grid>
             <Button
+              disabled={
+                !firstName ||
+                !lastName ||
+                !email ||
+                !password ||
+                !confirmPassword ||
+                !phone ||
+                !(confirmPassword === password)
+              }
               type="submit"
               fullWidth
               variant="contained"
