@@ -1,83 +1,154 @@
-import * as React from 'react';
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import FormControlLabel from '@mui/material/FormControlLabel';
-import Checkbox from '@mui/material/Checkbox';
-import Link from '@mui/material/Link';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "../api/axios";
 
-function Copyright(props) {
-  return (
-    <Typography variant="body2" color="text.secondary" align="center" {...props}>
-      {'Copyright © '}
-      <Link color="inherit" href="https://mui.com/">
-        Your Website
-      </Link>{' '}
-      {new Date().getFullYear()}
-      {'.'}
-    </Typography>
-  );
-}
-
-// TODO remove, this demo shouldn't need to reset the theme.
+import {
+  ThemeProvider,
+  createTheme,
+  CssBaseline,
+  Container,
+  Grid,
+  Box,
+  Avatar,
+  Button,
+  Typography,
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  Backdrop,
+  Snackbar,
+  Alert,
+  CircularProgress,
+} from "@mui/material";
+import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
 
 const defaultTheme = createTheme();
 
 export default function SignIn() {
-  const handleSubmit = (event) => {
+  const navigate = useNavigate();
+
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
+  let token = undefined;
+
+  const [backDropOpen, setBackDropOpen] = useState(false);
+  const [openSnackbar, setOpenSnackbar] = useState(false);
+  const [resMessage, setResMessage] = useState("");
+  const [resSuccess, setResSucess] = useState(false);
+
+  const handleSubmit = async (event) => {
     event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
+    const formData = {
+      email,
+      password,
+    };
+
+    try {
+      const res = await axios.post("/signin", formData);
+
+      if (res.status === 200) {
+        setBackDropOpen(false);
+        setResSucess(true);
+        setOpenSnackbar(true);
+        setResMessage("User Signed In Successfully");
+        token = res.data;
+        localStorage.setItem("auth-token", token);
+        navigate("/");
+      }
+
+      setEmail("");
+      setPassword("");
+      window.location.reload();
+    } catch (err) {
+      setResMessage(err.response.data);
+      setResSucess(false);
+      setBackDropOpen(false);
+      setOpenSnackbar(true);
+    }
+  };
+
+  const handleClose = (event, reason) => {
+    if (reason === "clickaway") {
+      setOpenSnackbar(false);
+      return;
+    }
+    setOpenSnackbar(false);
   };
 
   return (
     <ThemeProvider theme={defaultTheme}>
       <Container component="main" maxWidth="xs">
+        <Backdrop
+          sx={{ color: "#fff", zIndex: (theme) => theme.zIndex.drawer + 1 }}
+          open={backDropOpen}
+        >
+          <CircularProgress color="inherit" />
+        </Backdrop>
+
+        <Snackbar
+          anchorOrigin={{ vertical: "bottom", horizontal: "center" }}
+          open={openSnackbar}
+          autoHideDuration={6000}
+          onClose={handleClose}
+        >
+          <Alert
+            variant="filled"
+            severity={resSuccess ? "success" : "error"}
+            sx={{ width: "100%" }}
+            onClose={handleClose}
+          >
+            {resMessage}
+          </Alert>
+        </Snackbar>
+
         <CssBaseline />
         <Box
           sx={{
-            marginTop: 8,
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
+            marginTop: 15,
+            marginBottom: 16,
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
           }}
         >
-          <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
+          <Avatar sx={{ m: 1, bgcolor: "primary.main" }}>
             <LockOutlinedIcon />
           </Avatar>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
-          <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            noValidate
+            sx={{ mt: 1 }}
+          >
             <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
               label="Email Address"
-              name="email"
-              autoComplete="email"
+              value={email}
+              id="email"
+              margin="normal"
               autoFocus
+              autoComplete="email"
+              fullWidth
+              required
+              onChange={(e) => {
+                setEmail(e.target.value);
+              }}
             />
             <TextField
+              label="Password"
+              value={password}
               margin="normal"
+              type="password"
               required
               fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
               autoComplete="current-password"
+              id="password"
+              onChange={(e) => {
+                setPassword(e.target.value);
+              }}
             />
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
@@ -92,20 +163,19 @@ export default function SignIn() {
               Sign In
             </Button>
             <Grid container>
-              <Grid item xs>
+              {/* <Grid item xs>
                 <Link href="#" variant="body2">
                   Forgot password?
                 </Link>
-              </Grid>
+              </Grid> */}
               <Grid item>
-                <Link href="#" variant="body2">
+                <Link to="/signup" variant="body2">
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
             </Grid>
           </Box>
         </Box>
-        <Copyright sx={{ mt: 8, mb: 4 }} />
       </Container>
     </ThemeProvider>
   );
