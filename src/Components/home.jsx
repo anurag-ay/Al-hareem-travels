@@ -4,16 +4,16 @@ import Services from "../Components/services";
 import About from "./about";
 import Contact from "./contact";
 import { Divider } from "@mui/material";
-function home() {
+function Home(props) {
   return (
     <>
       <Carousel />
       <Services />
       <About />
       <Divider />
-      <Contact />
+      <Contact {...props} />
     </>
   );
 }
 
-export default home;
+export default Home;
