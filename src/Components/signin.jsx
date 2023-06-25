@@ -19,8 +19,14 @@ import {
   Snackbar,
   Alert,
   CircularProgress,
+  InputLabel,
+  OutlinedInput,
+  InputAdornment,
+  IconButton,
+  FormControl,
 } from "@mui/material";
 import LockOutlinedIcon from "@mui/icons-material/LockOutlined";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 
 const defaultTheme = createTheme();
 
@@ -29,6 +35,8 @@ export default function SignIn() {
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const [showPassword, setShowPassword] = useState(false);
 
   let token = undefined;
 
@@ -39,6 +47,7 @@ export default function SignIn() {
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+
     const formData = {
       email,
       password,
@@ -61,7 +70,8 @@ export default function SignIn() {
       setPassword("");
       window.location.reload();
     } catch (err) {
-      setResMessage(err.response.data);
+      if (err?.response) setResMessage(err?.response?.data);
+      else setResMessage(err?.message);
       setResSucess(false);
       setBackDropOpen(false);
       setOpenSnackbar(true);
@@ -74,6 +84,14 @@ export default function SignIn() {
       return;
     }
     setOpenSnackbar(false);
+  };
+
+  const handleClickShowPassword = () => {
+    setShowPassword((show) => !show);
+  };
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
   };
 
   return (
@@ -137,24 +155,40 @@ export default function SignIn() {
                 setEmail(e.target.value);
               }}
             />
-            <TextField
-              label="Password"
-              value={password}
-              margin="normal"
-              type="password"
-              required
-              fullWidth
-              autoComplete="current-password"
-              id="password"
-              onChange={(e) => {
-                setPassword(e.target.value);
-              }}
-            />
+
+            <FormControl fullWidth variant="outlined">
+              <InputLabel>Password *</InputLabel>
+              <OutlinedInput
+                type={showPassword ? "text" : "password"}
+                endAdornment={
+                  <InputAdornment position="end">
+                    <IconButton
+                      onClick={handleClickShowPassword}
+                      onMouseDown={handleMouseDownPassword}
+                      edge="end"
+                    >
+                      {showPassword ? <VisibilityOff /> : <Visibility />}
+                    </IconButton>
+                  </InputAdornment>
+                }
+                label="Password"
+                value={password}
+                required
+                fullWidth
+                autoComplete="current-password"
+                id="password"
+                onChange={(e) => {
+                  setPassword(e.target.value);
+                }}
+              />
+            </FormControl>
+
             <FormControlLabel
               control={<Checkbox value="remember" color="primary" />}
               label="Remember me"
             />
             <Button
+              disabled={!email || !password}
               type="submit"
               fullWidth
               variant="contained"
