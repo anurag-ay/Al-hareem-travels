@@ -1,6 +1,7 @@
 import { Card, CardMedia, Box, Typography } from "@mui/material";
 import { Container } from "@mui/system";
 import React from "react";
+import AboutImage from "../Assets/Images/about-image.jpg"
 
 function about() {
   return (
@@ -17,22 +18,13 @@ function about() {
         <CardMedia
           component="img"
           height="440"
-          image="https://upload.wikimedia.org/wikipedia/commons/b/b6/Image_created_with_a_mobile_phone.png"
+          image={AboutImage}
           alt="green iguana"
         />
       </Card>
       <Container maxWidth="md">
         <Typography variant="body1" p="2em 0 2em 0" align="justify">
-          Images may be two or three-dimensional, such as a photograph or screen
-          display, or three-dimensional, such as a statue or hologram. They may
-          be captured by optical devices – such as cameras, mirrors, lenses,
-          telescopes, microscopes, and natural objects and phenomena, such as
-          the human eye or water. The word 'image' is also used in the broader
-          sense of any two-dimensional figure such as a map, graph, pie chart,
-          painting , or banner. In this wider sense, images can also be rendered
-          manually, such as by drawing, the art of painting, carving, rendered
-          automatically by printing or computer graphics technology, or
-          developed by a combination of methods.
+        We are Delivering the best Service to our Associates and ours costumers since 2014 And I hope forward also we will be providing best Service in Future, we deal in Saudi Wakala Packages Umrah Packages Kuwait Service Packages And All Gulf Country Immigration Medical and Gamca... And we give the best deal in Dubai&Oman&Qatar Visit Visa, We Request to all Please try Once, We make sure you'll like our Services and Our Team Behaviour Thanks...
         </Typography>
       </Container>
     </Box>

@@ -67,8 +67,8 @@ function service() {
                 color="text.secondary"
                 sx={{ p: "1em" }}
               >
-                Book your flights with us for competitive prices & excellent
-                customer service.
+             Make Our Wakala We'll give you best &fast Service at very Affordable Price we will deal in Bombay & Delhi Both Service 
+
               </Typography>
             </CardContent>
           </Card>
@@ -98,8 +98,7 @@ function service() {
                 color="text.secondary"
                 sx={{ p: "1em" }}
               >
-                Book your flights with us for competitive prices & excellent
-                customer service.
+               We provide All type Of Dubai Service Like Visit Visa Air Ticket Immigration Accommodation Okay To Board Etc...
               </Typography>
             </CardContent>
           </Card>
@@ -129,8 +128,7 @@ function service() {
                 color="text.secondary"
                 sx={{ p: "1em" }}
               >
-                Book your flights with us for competitive prices and excellent
-                customer service.
+                We Provide all type of Oman Service Like Visit Visa Air Fare Immigration Etc...
               </Typography>
             </CardContent>
           </Card>
@@ -160,8 +158,7 @@ function service() {
                 color="text.secondary"
                 sx={{ p: "1em" }}
               >
-                Book your flights with us for competitive prices and excellent
-                customer service.
+                We Provide All Work Of Kuwait Stamping Immigration Air Ticket Etc At Affordable Price...
               </Typography>
             </CardContent>
           </Card>
@@ -191,8 +188,8 @@ function service() {
                 color="text.secondary"
                 sx={{ p: "1em" }}
               >
-                Book your flights with us for competitive prices and excellent
-                customer service.
+               We Provide All type of Work For Qatar Like Visit Visa Immigration Air Fare Etc...
+
               </Typography>
             </CardContent>
           </Card>
@@ -223,8 +220,7 @@ function service() {
                 color="text.secondary"
                 sx={{ p: "1em" }}
               >
-                Book your flights with us for competitive prices & excellent
-                customer service.
+                We Provide All type of Medical Work Pickup And Drop to Medical Room Etc...
               </Typography>
             </CardContent>
           </Card>

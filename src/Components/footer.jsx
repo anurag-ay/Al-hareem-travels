@@ -135,9 +135,19 @@ function Footer() {
             spacing={3}
             color="rgb(144, 152, 161)"
           >
-            <IconButton color="inherit">
-              <Facebook />
-            </IconButton>
+            <Link
+              sx={{
+                display: "flex",
+                textDecoration: "none",
+                color: "inherit",
+                alignItems: "center",
+              }}
+              href="https://www.facebook.com/people/Al-Hareem-Travels/100063635812461/?mibextid=ZbWKwL"
+            >
+              <IconButton color="inherit">
+                <Facebook />
+              </IconButton>
+            </Link>
             <IconButton color="inherit">
               <Instagram />
             </IconButton>
